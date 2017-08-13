@@ -6,8 +6,14 @@ block content
         each user in userlist
             div.well.container
                 p
+                    strong Name
+                    |: #{user.teacher.name}
+                    br
+                    
+                    strong Email:
                     a(href="mailto:#{user.email}")= user.email
                     br
-                    strong Approval Status :
-                    |#{user.approved}
+                    
+                    strong Approval Status
+                    |: #{user.approved}
             

@@ -10,6 +10,7 @@ module.exports = function(app, passport) {
           User.scan()
           .where('role').equals('teacher')
           .where('approved').equals(true)
+          .where('teacher').notNull()
           .exec(function(err, teachers){
             for(index in teachers.Items){
               var attr = teachers.Items[index].attrs;
